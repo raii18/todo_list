@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: linear-gradient(to bottom right, #ffdde1, #ffedea, #d4fcf9, #fff1f0);
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+body.dark-mode {
+    background: linear-gradient(to bottom right, #1e1e1e, #2b2b2b, #3c3c3c);
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ffe4f2, #ffe8e9);
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #ff6f91;
+    margin-bottom: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.sidebar.collapsed h2 {
+    font-size: 18px;
+}
+
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    margin: 5px 15px;
+}
+
+.nav li:hover {
+    background-color: #ffc7de;
+}
+
+.nav li i {
+    margin-right: 10px;
+    font-size: 16px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.collapsed li span {
+    display: none;
+}
+
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 80px;
+}
+
+.container {
+    background: #fff9fb;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 150, 200, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+
+
+body.dark-mode .container {
+    background: #2b2b2b;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+h1 {
+    color: #ff6f91;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+
+body.dark-mode h1 {
+    color: #f9a8c4;
+}
+
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 75%;
+    padding: 12px;
+    border: 1px solid #ffb3c6;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #ff6f91;
+    box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+}
+
+
+button {
+    padding: 12px 18px;
+    background-color: #ff6f91;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff3b68;
+    transform: translateY(-2px);
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.task-list li {
+    background: #fff1f8;
+    margin: 8px 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(255, 150, 200, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+.task-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 18px rgba(255, 150, 200, 0.2);
+}
+
+
+.task-list li.completed {
+    text-decoration: line-through;
+    color: #aaa;
+    background: #ffe8e9;
+}
+
+
+.actions a {
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.complete {
+    background-color: #81c784;
+    color: #fff;
+}
+
+.complete:hover {
+    background-color: #66bb6a;
+}
+
+
+.delete {
+    background-color: #ef5350;
+    color: #fff;
+}
+
+.delete:hover {
+    background-color: #e57373;
+}
+
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6f91;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #ff3b68;
+}
+
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
